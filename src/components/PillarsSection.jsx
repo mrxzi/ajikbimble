@@ -1,35 +1,63 @@
 const pillars = [
-  { icon: 'fa-brain',          title: 'Akademik & CAT',       desc: 'Ribuan bank soal ter-update, trik hitung cepat TIU, dan strategi TKP berbobot tinggi berstandar BKN.' },
-  { icon: 'fa-eye',            title: 'Psikotes',             desc: 'Bimbingan langsung psikolog berlisensi untuk tes Pauli, Kraepelin, Wartegg, EPPS, dan kecermatan.' },
-  { icon: 'fa-person-running', title: 'Samapta Jasmani',      desc: 'Pembinaan fisik terukur: lari 12 menit, pull-up, push-up, sit-up, shuttle run, dan teknik renang.' },
-  { icon: 'fa-heart-pulse',    title: 'Pra-Medical (Rikkes)', desc: 'Screening postur, gigi, mata, THT, varises, dan lab darah sejak awal untuk deteksi kendala.' },
-  { icon: 'fa-comments',       title: 'Mental & Pantukhir',   desc: 'Simulasi wawancara PMK, public speaking, dan pembentukan sikap tampang di hadapan dewan penguji.' },
-  { icon: 'fa-chart-line',     title: 'Monitoring Progress',  desc: 'Rapor digital berkala untuk orang tua: grafik skor CAT, waktu samapta, dan catatan kesehatan.' },
+  {
+    icon: 'fa-brain',
+    title: 'Akademik & CAT BKN',
+    desc: 'Ribuan bank soal ter-update, trik hitung cepat TIU, penalaran TWK, dan strategi TKP berbobot tinggi.',
+  },
+  {
+    icon: 'fa-eye',
+    title: 'Psikotes & Kecermatan',
+    desc: 'Bimbingan langsung psikolog berlisensi untuk tes Pauli, Kraepelin, Wartegg, EPPS, dan ketahanan fokus.',
+  },
+  {
+    icon: 'fa-person-running',
+    title: 'Samapta Jasmani',
+    desc: 'Pembinaan fisik terukur: lari 12 menit, pull-up, push-up, sit-up, shuttle run, dan teknik renang.',
+  },
+  {
+    icon: 'fa-heart-pulse',
+    title: 'Pra-Medical (Rikkes)',
+    desc: 'Screening awal postur, gigi, mata, THT, varises, dan lab darah untuk mendeteksi kendala sedini mungkin.',
+  },
+  {
+    icon: 'fa-comments',
+    title: 'Mental & Pantukhir',
+    desc: 'Simulasi wawancara PMK, public speaking, dan pembentukan sikap tampang di hadapan dewan penguji.',
+  },
+  {
+    icon: 'fa-chart-line',
+    title: 'Monitoring Progress',
+    desc: 'Rapor digital berkala untuk orang tua berisi grafik skor CAT, catatan waktu samapta, dan evaluasi medis.',
+  },
 ];
 
 export default function PillarsSection() {
   return (
-    <section id="keunggulan" className="py-20 md:py-28 bg-gray-900">
+    <section id="keunggulan" className="py-20 md:py-24 bg-neutral-50 border-y border-neutral-200/70">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="max-w-xl mb-14">
-          <p className="text-[13px] font-semibold text-brand-400 mb-3 tracking-wide">MENGAPA AJIK BIMBEL</p>
-          <h2 className="text-3xl md:text-[36px] font-extrabold tracking-tight text-white leading-tight mb-4">
-            Bukan sekadar les biasa
+        <div className="max-w-xl mb-12">
+          <p className="text-xs font-bold text-brand-700 uppercase tracking-wider mb-2.5">
+            Mengapa Ajik Bimbel
+          </p>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-900 leading-tight mb-3">
+            Pembinaan menyeluruh, bukan sekadar les biasa
           </h2>
-          <p className="text-gray-400 leading-relaxed text-[15px]">
-            Kami membentuk kesiapan menyeluruh — akademik, fisik, mental, dan kesehatan — 
-            karena seleksi TNI, POLRI, dan IPDN menguji semuanya.
+          <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
+            Seleksi TNI, POLRI, dan IPDN menguji kesiapan secara menyeluruh — akademik, fisik, kesehatan, dan mental.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {pillars.map((p, i) => (
-            <div key={i} className="bg-gray-800/60 border border-gray-700/50 rounded-xl p-6 hover:bg-gray-800 transition-colors">
-              <div className="w-9 h-9 rounded-lg bg-gray-700 text-gray-300 flex items-center justify-center text-[15px] mb-4">
+            <div
+              key={i}
+              className="bg-white border border-neutral-200 rounded-2xl p-6 hover:border-brand-300 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center text-base mb-4">
                 <i className={`fa-solid ${p.icon}`} />
               </div>
-              <h3 className="text-[15px] font-bold text-white mb-2">{p.title}</h3>
-              <p className="text-[13px] text-gray-400 leading-relaxed">{p.desc}</p>
+              <h3 className="text-base font-bold text-neutral-900 mb-2">{p.title}</h3>
+              <p className="text-sm text-neutral-600 leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>

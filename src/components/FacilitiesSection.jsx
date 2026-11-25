@@ -1,32 +1,64 @@
 const items = [
-  { icon: 'fa-desktop',         title: 'Lab CAT 50 Unit',      desc: 'Simulasi CAT real-time ber-AC dengan software berwaktu otomatis sesuai server BKN.' },
-  { icon: 'fa-person-swimming', title: 'Kolam Renang Standar', desc: 'Latihan teknik renang gaya dada militer dan pengambilan waktu 25 meter.' },
-  { icon: 'fa-road',            title: 'Lintasan & Lapangan',  desc: 'Lintasan lari terukur, tiang pull-up standar Mabes, matras, dan area shuttle run.' },
-  { icon: 'fa-bed',             title: 'Asrama Semi-Militer',  desc: 'Kamar ber-AC bersih, pengawasan 24 jam, pola disiplin harian, dan konsumsi bergizi.' },
-  { icon: 'fa-chalkboard-user', title: 'Kelas Eksklusif',      desc: 'Maksimal 25 siswa per kelas dilengkapi proyektor interaktif untuk belajar intensif.' },
-  { icon: 'fa-kit-medical',     title: 'Pusat Fisioterapi',    desc: 'Pemulihan cedera, bimbingan postur, tes buta warna, dan pemeriksaan berkala.' },
+  {
+    icon: 'fa-desktop',
+    title: 'Lab CAT 50 Unit',
+    desc: 'Ruang komputer ber-AC dengan software simulasi CAT real-time berwaktu otomatis sesuai standar server BKN.',
+  },
+  {
+    icon: 'fa-person-swimming',
+    title: 'Kolam Renang Standar',
+    desc: 'Sarana latihan pernapasan, teknik renang gaya dada militer, dan pengambilan waktu resmi 25 meter.',
+  },
+  {
+    icon: 'fa-road',
+    title: 'Lintasan & Lapangan',
+    desc: 'Lintasan lari terukur, tiang pull-up standar Mabes, matras sit-up, serta area latihan shuttle run.',
+  },
+  {
+    icon: 'fa-bed',
+    title: 'Asrama Semi-Militer',
+    desc: 'Kamar ber-AC bersih, pengawasan 24 jam, jadwal disiplin harian teratur, dan asupan makan bergizi.',
+  },
+  {
+    icon: 'fa-chalkboard-user',
+    title: 'Kelas Eksklusif',
+    desc: 'Maksimal 25 siswa per kelas dilengkapi proyektor interaktif untuk fokus pemahaman materi intensif.',
+  },
+  {
+    icon: 'fa-kit-medical',
+    title: 'Pusat Fisioterapi',
+    desc: 'Pemulihan cedera otot, bimbingan perbaikan postur tubuh, tes buta warna, dan pemeriksaan rutin.',
+  },
 ];
 
 export default function FacilitiesSection() {
   return (
-    <section id="fasilitas" className="py-20 md:py-28 bg-gray-50">
+    <section id="fasilitas" className="py-20 md:py-24 bg-neutral-50 border-y border-neutral-200/70">
       <div className="max-w-6xl mx-auto px-5">
         <div className="max-w-xl mb-12">
-          <p className="text-[13px] font-semibold text-brand-600 mb-3 tracking-wide">FASILITAS</p>
-          <h2 className="text-3xl md:text-[36px] font-extrabold tracking-tight text-gray-900 leading-tight">
-            Sarana mendukung proses terbaik
+          <p className="text-xs font-bold text-brand-700 uppercase tracking-wider mb-2.5">
+            Fasilitas
+          </p>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-900 leading-tight mb-3">
+            Sarana mendukung hasil terbaik
           </h2>
+          <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
+            Lingkungan belajar dan latihan fisik dirancang agar siswa terbiasa dengan standar ujian sebenarnya.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map((f, i) => (
-            <div key={i} className="bg-white rounded-xl border border-gray-200 p-5 flex gap-4 hover:shadow-sm transition-shadow">
-              <div className="w-9 h-9 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-[15px] shrink-0">
+            <div
+              key={i}
+              className="bg-white rounded-2xl border border-neutral-200 p-6 flex items-start gap-4 hover:border-brand-300 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center text-base shrink-0">
                 <i className={`fa-solid ${f.icon}`} />
               </div>
               <div>
-                <h3 className="text-[14px] font-semibold text-gray-900 mb-1">{f.title}</h3>
-                <p className="text-[13px] text-gray-500 leading-relaxed">{f.desc}</p>
+                <h3 className="text-sm sm:text-base font-bold text-neutral-900 mb-1.5">{f.title}</h3>
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{f.desc}</p>
               </div>
             </div>
           ))}

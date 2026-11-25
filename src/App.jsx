@@ -14,24 +14,34 @@ import RegistrationModal from './components/RegistrationModal';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 export default function App() {
-  const [modal, setModal] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState('');
+
+  const handleOpenModal = (pkgName = '') => {
+    setSelectedPackage(pkgName);
+    setModalOpen(true);
+  };
 
   return (
-    <div className="min-h-screen bg-warm-50 font-sans">
-      <Navbar onOpenModal={() => setModal(true)} />
+    <div className="min-h-screen bg-white text-neutral-900 font-sans">
+      <Navbar onOpenModal={handleOpenModal} />
       <main>
         <Hero />
         <ProgramSection />
         <PillarsSection />
         <Calculator />
         <FacilitiesSection />
-        <PricingSection onOpenModal={() => setModal(true)} />
+        <PricingSection onSelectPackage={handleOpenModal} />
         <TestimonialsSection />
         <FaqSection />
-        <CtaBanner onOpenModal={() => setModal(true)} />
+        <CtaBanner />
       </main>
       <Footer />
-      <RegistrationModal isOpen={modal} onClose={() => setModal(false)} />
+      <RegistrationModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        initialPackage={selectedPackage}
+      />
       <FloatingWhatsApp />
     </div>
   );
